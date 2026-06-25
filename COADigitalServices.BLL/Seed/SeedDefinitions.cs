@@ -1,0 +1,17 @@
+using System.Collections.Generic;
+
+namespace COADigitalServices.BLL.Seed
+{
+    // Simple container for plain seed user data. No database logic here.
+    public sealed record SeedUser(string Username, string Password, string Role);
+
+    public static class SeedDefinitions
+    {
+        public static IEnumerable<SeedUser> Users => new[]
+        {
+            new SeedUser("admin", "password", "Admin"),
+            new SeedUser("user1", "userpass", "User"),
+            new SeedUser("manager", "managerpass", "Manager"),
+        };
+    }
+}

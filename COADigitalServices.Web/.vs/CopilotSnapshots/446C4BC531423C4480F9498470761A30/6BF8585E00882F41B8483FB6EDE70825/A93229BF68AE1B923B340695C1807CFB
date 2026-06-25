@@ -1,0 +1,66 @@
+﻿using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
+using System.Threading.Tasks;
+using COADigitalServices.Data;
+using COADigitalServices.Data.Models;
+using Microsoft.EntityFrameworkCore;
+
+namespace COADigitalServices.BLL.Services
+{
+    public class UserService : IUserService
+    {
+        private readonly ApplicationDbContext _db;
+
+        public UserService(ApplicationDbContext db)
+        {
+            _db = db;
+        }
+
+        public async Task<bool> ValidateUserAsync(string username, string password)
+        {
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+                return false;
+
+            var user = await _db.Users.AsNoTracking().FirstOrDefaultAsync(u => u.Username == username);
+            if (user == null)
+                return false;
+
+            var hash = ComputeSha256Hash(password);
+            return hash == user.PasswordHash;
+        }
+
+        public async Task EnsureAdminUserAsync()
+        {
+            if (await _db.Users.AnyAsync(u => u.Username == "admin"))
+                return;
+
+            var user = new User
+            {
+                Username = "admin",
+                PasswordHash = ComputeSha256Hash("password"),
+                Role = "Admin"
+            };
+
+            _db.Users.Add(user);
+            await _db.SaveChangesAsync();
+        }
+
+        private static string ComputeSha256Hash(string rawData)
+        {
+            using (var sha256Hash = SHA256.Create())
+            {
+                // ComputeHash - returns byte array
+                var bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(rawData));
+
+                // Convert byte array to a string
+                var builder = new StringBuilder();
+                for (int i = 0; i < bytes.Length; i++)
+                {
+                    builder.Append(bytes[i].ToString("x2"));
+                }
+                return builder.ToString();
+            }
+        }
+    }
+}

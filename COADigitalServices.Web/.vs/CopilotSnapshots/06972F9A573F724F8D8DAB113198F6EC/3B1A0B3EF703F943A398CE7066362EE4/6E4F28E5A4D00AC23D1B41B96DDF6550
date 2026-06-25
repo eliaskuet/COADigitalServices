@@ -1,0 +1,51 @@
+﻿@{
+    Layout = null;
+    var userName = User?.Identity?.IsAuthenticated == true ? User.Identity.Name : "Guest";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewData["Title"] - Admin</title>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/site.css" />
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">Site</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#adminNavbar" aria-controls="adminNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="adminNavbar">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="/Admin/Dashboard">Dashboard</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/Admin/Users">Users</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/Admin/Users/Create">Add User</a></li>
+                    </ul>
+                    <form class="d-flex" method="get" action="/Admin/Users/Index">
+                        <input name="search" class="form-control me-2" type="search" placeholder="Search users" aria-label="Search" />
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                    <span class="navbar-text ms-3">Signed in as @userName</span>
+                    <form asp-controller="Account" asp-action="LogoutPost" method="post" class="ms-3">
+                        @Html.AntiForgeryToken()
+                        <button type="submit" class="btn btn-link">Logout</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main role="main" class="container">
+        @RenderBody()
+    </main>
+    <footer>
+        <p>&copy; @DateTime.Now.Year - Admin Area</p>
+    </footer>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,53 @@
+using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
+using System.Threading.Tasks;
+using COADigitalServices.BLL;
+using COADigitalServices.Data.Models;
+using Microsoft.EntityFrameworkCore;
+
+namespace COADigitalServices.BLL.Services
+{
+    public class UserService : IUserService
+    {
+        private readonly ApplicationDbContext _db;
+
+        public UserService(ApplicationDbContext db)
+        {
+            _db = db;
+        }
+
+        public async Task<bool> ValidateUserAsync(string username, string password)
+        {
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+                return false;
+
+            var user = await _db.Users.AsNoTracking().FirstOrDefaultAsync(u => u.Username == username);
+            if (user == null)
+                return false;
+
+            var hash = ComputeSha256Hash(password);
+            return hash == user.PasswordHash;
+        }
+
+        // seeding moved to BLL.Seed.SeedData
+
+
+        private static string ComputeSha256Hash(string rawData)
+        {
+            using (var sha256Hash = SHA256.Create())
+            {
+                // ComputeHash - returns byte array
+                var bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(rawData));
+
+                // Convert byte array to a string
+                var builder = new StringBuilder();
+                for (int i = 0; i < bytes.Length; i++)
+                {
+                    builder.Append(bytes[i].ToString("x2"));
+                }
+                return builder.ToString();
+            }
+        }
+    }
+}

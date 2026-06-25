@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="../COADigitalServices.BLL/COADigitalServices.BLL.csproj" />
+  <Project Path="../COADigitalServices.Data/COADigitalServices.Data.csproj" />
+  <Project Path="COADigitalServices.csproj" />
+</Solution>
