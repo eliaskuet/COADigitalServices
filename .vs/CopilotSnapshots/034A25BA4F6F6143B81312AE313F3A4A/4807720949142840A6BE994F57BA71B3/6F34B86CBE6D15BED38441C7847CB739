@@ -1,0 +1,18 @@
+﻿@model COADigitalServices.Data.Models.User
+@{
+    ViewData["Title"] = "User Details";
+}
+
+<h1>User Details</h1>
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Username</h5>
+        <p class="card-text"><strong>Id:</strong> @Model.Id</p>
+        <p class="card-text"><strong>Name:</strong> @(Model.FirstName + " " + Model.LastName)</p>
+        <p class="card-text"><strong>Email:</strong> @Model.EmailAddress</p>
+        <p class="card-text"><strong>Mobile:</strong> @Model.MobileNumber</p>
+        <p class="card-text"><strong>Role:</strong> @(Model.Role != null ? Model.Role.Name : "")</p>
+        <a class="btn btn-secondary" href="/Admin/Users">Back to list</a>
+    </div>
+</div>

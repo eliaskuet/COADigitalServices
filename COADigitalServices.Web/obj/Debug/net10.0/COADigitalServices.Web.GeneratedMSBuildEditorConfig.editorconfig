@@ -27,6 +27,26 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Elias/source/repos/COADigitalServices/COADigitalServices.Web/Areas/Admin/Views/ImplementedServices/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSW1wbGVtZW50ZWRTZXJ2aWNlc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Elias/source/repos/COADigitalServices/COADigitalServices.Web/Areas/Admin/Views/ImplementedServices/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSW1wbGVtZW50ZWRTZXJ2aWNlc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Elias/source/repos/COADigitalServices/COADigitalServices.Web/Areas/Admin/Views/ImplementedServices/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSW1wbGVtZW50ZWRTZXJ2aWNlc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Elias/source/repos/COADigitalServices/COADigitalServices.Web/Areas/Admin/Views/ImplementedServices/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSW1wbGVtZW50ZWRTZXJ2aWNlc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Elias/source/repos/COADigitalServices/COADigitalServices.Web/Areas/Admin/Views/ImplementedServices/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSW1wbGVtZW50ZWRTZXJ2aWNlc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Elias/source/repos/COADigitalServices/COADigitalServices.Web/Areas/Admin/Views/Users/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVXNlcnNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

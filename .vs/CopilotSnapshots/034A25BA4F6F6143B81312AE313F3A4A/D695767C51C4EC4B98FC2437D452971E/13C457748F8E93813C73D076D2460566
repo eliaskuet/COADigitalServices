@@ -1,0 +1,171 @@
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
+
+#nullable disable
+
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
+namespace COADigitalServices.BLL.Migrations
+{
+    /// <inheritdoc />
+    public partial class AddRolesSeed : Migration
+    {
+        /// <inheritdoc />
+        protected override void Up(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.DropColumn(
+                name: "Role",
+                table: "Users");
+
+            migrationBuilder.AddColumn<string>(
+                name: "EmailAddress",
+                table: "Users",
+                type: "nvarchar(200)",
+                maxLength: 200,
+                nullable: false,
+                defaultValue: "");
+
+            migrationBuilder.AddColumn<string>(
+                name: "FirstName",
+                table: "Users",
+                type: "nvarchar(100)",
+                maxLength: 100,
+                nullable: false,
+                defaultValue: "");
+
+            migrationBuilder.AddColumn<string>(
+                name: "LastName",
+                table: "Users",
+                type: "nvarchar(100)",
+                maxLength: 100,
+                nullable: false,
+                defaultValue: "");
+
+            migrationBuilder.AddColumn<string>(
+                name: "MobileNumber",
+                table: "Users",
+                type: "nvarchar(20)",
+                maxLength: 20,
+                nullable: false,
+                defaultValue: "");
+
+            migrationBuilder.AddColumn<int>(
+                name: "RoleId",
+                table: "Users",
+                type: "int",
+                nullable: false,
+                defaultValue: 0);
+
+            migrationBuilder.CreateTable(
+                name: "ImplementedServices",
+                columns: table => new
+                {
+                    ServiceId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ServiceName = table.Column<string>(type: "nvarchar(500)", maxLength: 200, nullable: false),
+                    ShortBrief = table.Column<string>(type: "nvarchar(Max)", maxLength: 500, nullable: false),
+                    IconUrl = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: false),
+                    ServiceUrl = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: false),
+                    CreatedUserId = table.Column<int>(type: "int", nullable: false),
+                    CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdatedUserId = table.Column<int>(type: "int", nullable: true),
+                    UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ImplementedServices", x => x.ServiceId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Roles",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Roles", x => x.Id);
+                });
+
+            migrationBuilder.InsertData(
+                table: "Roles",
+                columns: new[] { "Id", "Name" },
+                values: new object[,]
+                {
+                    { 1, "Admin" },
+                    { 2, "User" }
+                });
+
+            // Set all existing users to "User" role (RoleId = 2) to satisfy foreign key constraint
+            migrationBuilder.Sql("UPDATE Users SET RoleId = 2 WHERE RoleId = 0");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Users_RoleId",
+                table: "Users",
+                column: "RoleId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Roles_Name",
+                table: "Roles",
+                column: "Name",
+                unique: true);
+
+            migrationBuilder.AddForeignKey(
+                name: "FK_Users_Roles_RoleId",
+                table: "Users",
+                column: "RoleId",
+                principalTable: "Roles",
+                principalColumn: "Id",
+                onDelete: ReferentialAction.Restrict);
+        }
+
+        /// <inheritdoc />
+        protected override void Down(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.DropForeignKey(
+                name: "FK_Users_Roles_RoleId",
+                table: "Users");
+
+            migrationBuilder.DropTable(
+                name: "ImplementedServices");
+
+            migrationBuilder.DropTable(
+                name: "Roles");
+
+            migrationBuilder.DropIndex(
+                name: "IX_Users_RoleId",
+                table: "Users");
+
+            migrationBuilder.DropColumn(
+                name: "EmailAddress",
+                table: "Users");
+
+            migrationBuilder.DropColumn(
+                name: "FirstName",
+                table: "Users");
+
+            migrationBuilder.DropColumn(
+                name: "LastName",
+                table: "Users");
+
+            migrationBuilder.DropColumn(
+                name: "MobileNumber",
+                table: "Users");
+
+            migrationBuilder.DropColumn(
+                name: "RoleId",
+                table: "Users");
+
+            migrationBuilder.AddColumn<string>(
+                name: "Role",
+                table: "Users",
+                type: "nvarchar(50)",
+                maxLength: 50,
+                nullable: false,
+                defaultValue: "");
+        }
+    }
+}

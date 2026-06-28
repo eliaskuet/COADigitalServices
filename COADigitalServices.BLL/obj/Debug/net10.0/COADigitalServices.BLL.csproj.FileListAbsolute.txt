@@ -32,3 +32,4 @@ C:\Users\Elias\source\repos\COADigitalServices\COADigitalServices.BLL\obj\Debug\
 C:\Users\Elias\source\repos\COADigitalServices\COADigitalServices.BLL\obj\Debug\net10.0\COADigitalServices.BLL.pdb
 C:\Users\Elias\source\repos\COADigitalServices\COADigitalServices.BLL\obj\Debug\net10.0\COADigitalServices.BLL.genruntimeconfig.cache
 C:\Users\Elias\source\repos\COADigitalServices\COADigitalServices.BLL\obj\Debug\net10.0\ref\COADigitalServices.BLL.dll
+C:\Users\Elias\source\repos\COADigitalServices\COADigitalServices.BLL\obj\Debug\net10.0\COADigitalServices.BLL.sourcelink.json

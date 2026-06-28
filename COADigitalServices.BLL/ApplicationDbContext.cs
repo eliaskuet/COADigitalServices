@@ -10,11 +10,28 @@ namespace COADigitalServices.BLL
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<Role> Roles { get; set; }
+        public DbSet<ImplementedService> ImplementedServices { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<User>().HasIndex(u => u.Username).IsUnique();
+
+            modelBuilder.Entity<User>()
+                .HasOne(u => u.Role)
+                .WithMany(r => r.Users)
+                .HasForeignKey(u => u.RoleId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Role>()
+                .HasIndex(r => r.Name).IsUnique();
+
+            // Seed initial roles. These will be applied when you run EF migrations.
+            modelBuilder.Entity<Role>().HasData(
+                new Role { Id = 1, Name = "Admin" },
+                new Role { Id = 2, Name = "User" }
+            );
         }
     }
 }

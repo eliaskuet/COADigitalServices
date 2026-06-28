@@ -9,14 +9,40 @@ namespace COADigitalServices.Data.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-        [Required]
-        [MaxLength(100)]
+        [Required(ErrorMessage = "Username is required")]
+        [MaxLength(100, ErrorMessage = "Username cannot exceed 100 characters")]
+        [Display(Name = "Username")]
         public string Username { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Password is required")]
+        [Display(Name = "Password")]
         public string PasswordHash { get; set; }
 
-        [MaxLength(50)]
-        public string Role { get; set; }
+        [Required(ErrorMessage = "First Name is required")]
+        [MaxLength(100, ErrorMessage = "First Name cannot exceed 100 characters")]
+        [Display(Name = "First Name")]
+        public string FirstName { get; set; }
+
+        [MaxLength(100, ErrorMessage = "Last Name cannot exceed 100 characters")]
+        [Display(Name = "Last Name")]
+        public string LastName { get; set; }
+
+        [Required(ErrorMessage = "Email Address is required")]
+        [EmailAddress(ErrorMessage = "Email Address must be a valid email")]
+        [MaxLength(200, ErrorMessage = "Email Address cannot exceed 200 characters")]
+        [Display(Name = "Email Address")]
+        public string EmailAddress { get; set; }
+
+        [Required(ErrorMessage = "Mobile Number is required")]
+        [Phone(ErrorMessage = "Mobile Number must be a valid phone number")]
+        [MaxLength(20, ErrorMessage = "Mobile Number cannot exceed 20 characters")]
+        [RegularExpression(@"^\d+$", ErrorMessage = "Mobile Number must contain only digits")]
+        [Display(Name = "Mobile Number")]
+        public string MobileNumber { get; set; }
+
+        [Required(ErrorMessage = "Role is required")]
+        [Display(Name = "Role")]
+        public int RoleId { get; set; }
+        public Role Role { get; set; }
     }
 }

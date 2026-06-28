@@ -1,0 +1,43 @@
+﻿@model IEnumerable<COADigitalServices.Data.Models.User>
+@{
+    ViewData["Title"] = "Users";
+    var search = ViewData["Search"] as string;
+}
+
+<h1>Users</h1>
+
+<form method="get" class="row g-3 mb-3">
+    <div class="col-auto">
+        <input type="text" name="search" value="@search" class="form-control" placeholder="Search by username" />
+    </div>
+    <div class="col-auto">
+        <button class="btn btn-primary" type="submit">Search</button>
+        <a class="btn btn-secondary" href="/Admin/Users/Create">Add User</a>
+    </div>
+</form>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Username</th>
+            <th>Role</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach(var u in Model)
+{
+    <tr>
+        <td>@u.Id</td>
+        <td>@u.Username</td>
+        <td>@u.Role</td>
+        <td>
+            <a class="btn btn-sm btn-info" href="/Admin/Users/Details/@u.Id">Details</a>
+            <a class="btn btn-sm btn-warning" href="/Admin/Users/Edit/@u.Id">Edit</a>
+            <a class="btn btn-sm btn-danger" href="/Admin/Users/Delete/@u.Id">Delete</a>
+        </td>
+    </tr>
+}
+    </tbody>
+</table>

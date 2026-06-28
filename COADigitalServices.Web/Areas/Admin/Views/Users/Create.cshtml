@@ -18,8 +18,29 @@
         <span asp-validation-for="Password" class="text-danger"></span>
     </div>
     <div class="col-md-6">
-        <label asp-for="Role" class="form-label"></label>
-        <input asp-for="Role" class="form-control" />
+        <label asp-for="FirstName" class="form-label"></label>
+        <input asp-for="FirstName" class="form-control" />
+        <span asp-validation-for="FirstName" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label asp-for="LastName" class="form-label"></label>
+        <input asp-for="LastName" class="form-control" />
+        <span asp-validation-for="LastName" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label asp-for="EmailAddress" class="form-label"></label>
+        <input asp-for="EmailAddress" class="form-control" />
+        <span asp-validation-for="EmailAddress" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label asp-for="MobileNumber" class="form-label"></label>
+        <input asp-for="MobileNumber" class="form-control" />
+        <span asp-validation-for="MobileNumber" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label asp-for="RoleId" class="form-label"></label>
+        <select asp-for="RoleId" class="form-select" asp-items="(IEnumerable<SelectListItem>)ViewData["Roles"]"></select>
+        <span asp-validation-for="RoleId" class="text-danger"></span>
     </div>
     <div class="col-12">
         <button type="submit" class="btn btn-primary">Create</button>

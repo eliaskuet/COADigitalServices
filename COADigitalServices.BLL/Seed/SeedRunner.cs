@@ -28,7 +28,11 @@ namespace COADigitalServices.BLL.Seed
                     {
                         Username = s.Username,
                         PasswordHash = ComputeSha256Hash(s.Password),
-                        Role = s.Role
+                        RoleId = s.RoleId,
+                        FirstName = s.Username,
+                        LastName = string.Empty,
+                        EmailAddress = $"{s.Username}@example.com",
+                        MobileNumber = string.Empty
                     });
                 }
             }

@@ -8,7 +8,7 @@
 
 <form method="get" class="row g-3 mb-3">
     <div class="col-auto">
-        <input type="text" name="search" value="@search" class="form-control" placeholder="Search by username" />
+        <input type="text" name="search" value="@search" class="form-control" placeholder="Search by username or name" />
     </div>
     <div class="col-auto">
         <button class="btn btn-primary" type="submit">Search</button>
@@ -21,6 +21,9 @@
         <tr>
             <th>Id</th>
             <th>Username</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Mobile</th>
             <th>Role</th>
             <th></th>
         </tr>
@@ -31,7 +34,10 @@
     <tr>
         <td>@u.Id</td>
         <td>@u.Username</td>
-        <td>@u.Role</td>
+        <td>@(u.FirstName + " " + u.LastName)</td>
+        <td>@u.EmailAddress</td>
+        <td>@u.MobileNumber</td>
+        <td>@(u.Role != null ? u.Role.Name : "")</td>
         <td>
             <a class="btn btn-sm btn-info" href="/Admin/Users/Details/@u.Id">Details</a>
             <a class="btn btn-sm btn-warning" href="/Admin/Users/Edit/@u.Id">Edit</a>

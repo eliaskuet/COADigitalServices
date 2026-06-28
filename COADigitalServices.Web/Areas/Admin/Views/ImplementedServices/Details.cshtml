@@ -1,0 +1,21 @@
+@model COADigitalServices.Data.Models.ImplementedService
+@{
+    ViewData["Title"] = "Service Details";
+}
+
+<h1>Service Details</h1>
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">@Model.ServiceName</h5>
+        <p class="card-text"><strong>Id:</strong> @Model.ServiceId</p>
+        <p class="card-text"><strong>Short Brief:</strong> @Model.ShortBrief</p>
+        <p class="card-text"><strong>Icon:</strong> @if(!string.IsNullOrWhiteSpace(Model.IconUrl)){<img src="@Model.IconUrl" alt="icon" style="max-height:48px;" />} </p>
+        <p class="card-text"><strong>Url:</strong> <a href="@Model.ServiceUrl" target="_blank">@Model.ServiceUrl</a></p>
+        <p class="card-text"><strong>Created:</strong> @Model.CreationDate.ToString("u")</p>
+        <p class="card-text"><strong>Created By:</strong> @Model.CreatedUserId</p>
+        <p class="card-text"><strong>Updated:</strong> @(Model.UpdatedDate?.ToString("u") ?? "-")</p>
+        <p class="card-text"><strong>Active:</strong> @(Model.IsActive ? "Yes" : "No")</p>
+        <a class="btn btn-secondary" href="/Admin/ImplementedServices">Back to list</a>
+    </div>
+</div>

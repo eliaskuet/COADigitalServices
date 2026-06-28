@@ -1,0 +1,42 @@
+@model IEnumerable<COADigitalServices.Data.Models.ImplementedService>
+@{
+    ViewData["Title"] = "Implemented Services";
+}
+
+<h1>Implemented Services</h1>
+
+<p>
+    <a class="btn btn-primary" href="/Admin/ImplementedServices/Create">Add Service</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Short Brief</th>
+            <th>Url</th>
+            <th>Active</th>
+            <th>Created</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach(var s in Model)
+{
+    <tr>
+        <td>@s.ServiceId</td>
+        <td>@s.ServiceName</td>
+        <td>@s.ShortBrief</td>
+        <td><a href="@s.ServiceUrl" target="_blank">@s.ServiceUrl</a></td>
+        <td>@(s.IsActive ? "Yes" : "No")</td>
+        <td>@s.CreationDate.ToString("u")</td>
+        <td>
+            <a class="btn btn-sm btn-info" href="/Admin/ImplementedServices/Details/@s.ServiceId">Details</a>
+            <a class="btn btn-sm btn-warning" href="/Admin/ImplementedServices/Edit/@s.ServiceId">Edit</a>
+            <a class="btn btn-sm btn-danger" href="/Admin/ImplementedServices/Delete/@s.ServiceId">Delete</a>
+        </td>
+    </tr>
+}
+    </tbody>
+</table>

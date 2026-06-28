@@ -1,0 +1,49 @@
+﻿@model COADigitalServices.Data.Models.ImplementedService
+@{
+    ViewData["Title"] = "Edit Implemented Service";
+}
+
+<h1>Edit Implemented Service</h1>
+
+<form asp-action="Edit" method="post" class="row g-3">
+    @Html.AntiForgeryToken()
+    <input type="hidden" asp-for="ServiceId" />
+    <div class="col-md-6">
+        <label asp-for="ServiceName" class="form-label"></label>
+        <input asp-for="ServiceName" class="form-control" />
+        <span asp-validation-for="ServiceName" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label asp-for="ShortBrief" class="form-label"></label>
+        <input asp-for="ShortBrief" class="form-control" />
+        <span asp-validation-for="ShortBrief" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label asp-for="IconUrl" class="form-label"></label>
+        <input asp-for="IconUrl" class="form-control" />
+        <span asp-validation-for="IconUrl" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label asp-for="ServiceUrl" class="form-label"></label>
+        <input asp-for="ServiceUrl" class="form-control" />
+        <span asp-validation-for="ServiceUrl" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label asp-for="UpdatedUserId" class="form-label"></label>
+        <input asp-for="UpdatedUserId" class="form-control" />
+        <span asp-validation-for="UpdatedUserId" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label asp-for="IsActive" class="form-label"></label>
+        <input asp-for="IsActive" class="form-check-input" />
+        <span asp-validation-for="IsActive" class="text-danger"></span>
+    </div>
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary">Save</button>
+        <a class="btn btn-secondary" href="/Admin/ImplementedServices">Back to list</a>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

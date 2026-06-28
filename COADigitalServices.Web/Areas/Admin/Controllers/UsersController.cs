@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -8,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using COADigitalServices.BLL;
 using COADigitalServices.Data.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace COADigitalServices.Areas.Admin.Controllers
 {
@@ -24,10 +26,10 @@ namespace COADigitalServices.Areas.Admin.Controllers
 
         public async Task<IActionResult> Index(string search)
         {
-            var q = _db.Users.AsQueryable();
+            var q = _db.Users.Include(u => u.Role).AsQueryable();
             if (!string.IsNullOrWhiteSpace(search))
             {
-                q = q.Where(u => u.Username.Contains(search));
+                q = q.Where(u => u.Username.Contains(search) || (u.FirstName != null && u.FirstName.Contains(search)) || (u.LastName != null && u.LastName.Contains(search)));
                 ViewData["Search"] = search;
             }
 
@@ -38,6 +40,7 @@ namespace COADigitalServices.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult Create()
         {
+            ViewData["Roles"] = new SelectList(_db.Roles.OrderBy(r => r.Name), "Id", "Name");
             return View();
         }
 
@@ -45,15 +48,17 @@ namespace COADigitalServices.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(CreateUserModel model)
         {
-            if (string.IsNullOrWhiteSpace(model?.Username) || string.IsNullOrWhiteSpace(model?.Password))
+            if (model == null || string.IsNullOrWhiteSpace(model.Username) || string.IsNullOrWhiteSpace(model.Password))
             {
                 ModelState.AddModelError(string.Empty, "Username and password are required.");
+                ViewData["Roles"] = new SelectList(_db.Roles.OrderBy(r => r.Name), "Id", "Name", model?.RoleId);
                 return View(model);
             }
 
             if (await _db.Users.AnyAsync(u => u.Username == model.Username))
             {
                 ModelState.AddModelError(string.Empty, "Username already exists.");
+                ViewData["Roles"] = new SelectList(_db.Roles.OrderBy(r => r.Name), "Id", "Name", model.RoleId);
                 return View(model);
             }
 
@@ -61,7 +66,11 @@ namespace COADigitalServices.Areas.Admin.Controllers
             {
                 Username = model.Username,
                 PasswordHash = ComputeSha256Hash(model.Password),
-                Role = model.Role
+                RoleId = model.RoleId,
+                FirstName = model.FirstName,
+                LastName = model.LastName,
+                EmailAddress = model.EmailAddress,
+                MobileNumber = model.MobileNumber
             };
 
             _db.Users.Add(user);
@@ -79,8 +88,13 @@ namespace COADigitalServices.Areas.Admin.Controllers
             {
                 Id = user.Id,
                 Username = user.Username,
-                Role = user.Role
+                RoleId = user.RoleId,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                EmailAddress = user.EmailAddress,
+                MobileNumber = user.MobileNumber
             };
+            ViewData["Roles"] = new SelectList(_db.Roles.OrderBy(r => r.Name), "Id", "Name", model.RoleId);
             return View(model);
         }
 
@@ -95,17 +109,23 @@ namespace COADigitalServices.Areas.Admin.Controllers
             if (string.IsNullOrWhiteSpace(model.Username))
             {
                 ModelState.AddModelError(string.Empty, "Username is required.");
+                ViewData["Roles"] = new SelectList(_db.Roles.OrderBy(r => r.Name), "Id", "Name", model.RoleId);
                 return View(model);
             }
 
             if (await _db.Users.AnyAsync(u => u.Username == model.Username && u.Id != model.Id))
             {
                 ModelState.AddModelError(string.Empty, "Another user with the same username exists.");
+                ViewData["Roles"] = new SelectList(_db.Roles.OrderBy(r => r.Name), "Id", "Name", model.RoleId);
                 return View(model);
             }
 
             user.Username = model.Username;
-            user.Role = model.Role;
+            user.RoleId = model.RoleId;
+            user.FirstName = model.FirstName;
+            user.LastName = model.LastName;
+            user.EmailAddress = model.EmailAddress;
+            user.MobileNumber = model.MobileNumber;
             if (!string.IsNullOrWhiteSpace(model.Password))
             {
                 user.PasswordHash = ComputeSha256Hash(model.Password);
@@ -119,7 +139,7 @@ namespace COADigitalServices.Areas.Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> Details(int id)
         {
-            var user = await _db.Users.FindAsync(id);
+            var user = await _db.Users.Include(u => u.Role).FirstOrDefaultAsync(u => u.Id == id);
             if (user == null) return NotFound();
             return View(user);
         }
@@ -127,7 +147,7 @@ namespace COADigitalServices.Areas.Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> Delete(int id)
         {
-            var user = await _db.Users.FindAsync(id);
+            var user = await _db.Users.Include(u => u.Role).FirstOrDefaultAsync(u => u.Id == id);
             if (user == null) return NotFound();
             return View(user);
         }
@@ -156,17 +176,79 @@ namespace COADigitalServices.Areas.Admin.Controllers
 
         public class CreateUserModel
         {
+            [Required(ErrorMessage = "Username is required")]
+            [MaxLength(100, ErrorMessage = "Username cannot exceed 100 characters")]
+            [Display(Name = "Username")]
             public string Username { get; set; }
+
+            [Required(ErrorMessage = "Password is required")]
+            [Display(Name = "Password")]
             public string Password { get; set; }
-            public string Role { get; set; }
+
+            [Required(ErrorMessage = "Role is required")]
+            [Display(Name = "Role")]
+            public int RoleId { get; set; }
+
+            [Required(ErrorMessage = "First Name is required")]
+            [MaxLength(100, ErrorMessage = "First Name cannot exceed 100 characters")]
+            [Display(Name = "First Name")]
+            public string FirstName { get; set; }
+
+            [MaxLength(100, ErrorMessage = "Last Name cannot exceed 100 characters")]
+            [Display(Name = "Last Name")]
+            public string LastName { get; set; }
+
+            [Required(ErrorMessage = "Email Address is required")]
+            [EmailAddress(ErrorMessage = "Email Address must be a valid email")]
+            [MaxLength(200, ErrorMessage = "Email Address cannot exceed 200 characters")]
+            [Display(Name = "Email Address")]
+            public string EmailAddress { get; set; }
+
+            [Required(ErrorMessage = "Mobile Number is required")]
+            [Phone(ErrorMessage = "Mobile Number must be a valid phone number")]
+            [MaxLength(20, ErrorMessage = "Mobile Number cannot exceed 20 characters")]
+            [RegularExpression(@"^\d+$", ErrorMessage = "Mobile Number must contain only digits")]
+            [Display(Name = "Mobile Number")]
+            public string MobileNumber { get; set; }
         }
 
         public class EditUserModel
         {
             public int Id { get; set; }
+
+            [Required(ErrorMessage = "Username is required")]
+            [MaxLength(100, ErrorMessage = "Username cannot exceed 100 characters")]
+            [Display(Name = "Username")]
             public string Username { get; set; }
+
+            [Display(Name = "Password (leave blank to keep current)")]
             public string Password { get; set; }
-            public string Role { get; set; }
+
+            [Required(ErrorMessage = "Role is required")]
+            [Display(Name = "Role")]
+            public int RoleId { get; set; }
+
+            [Required(ErrorMessage = "First Name is required")]
+            [MaxLength(100, ErrorMessage = "First Name cannot exceed 100 characters")]
+            [Display(Name = "First Name")]
+            public string FirstName { get; set; }
+
+            [MaxLength(100, ErrorMessage = "Last Name cannot exceed 100 characters")]
+            [Display(Name = "Last Name")]
+            public string LastName { get; set; }
+
+            [Required(ErrorMessage = "Email Address is required")]
+            [EmailAddress(ErrorMessage = "Email Address must be a valid email")]
+            [MaxLength(200, ErrorMessage = "Email Address cannot exceed 200 characters")]
+            [Display(Name = "Email Address")]
+            public string EmailAddress { get; set; }
+
+            [Required(ErrorMessage = "Mobile Number is required")]
+            [Phone(ErrorMessage = "Mobile Number must be a valid phone number")]
+            [MaxLength(20, ErrorMessage = "Mobile Number cannot exceed 20 characters")]
+            [RegularExpression(@"^\d+$", ErrorMessage = "Mobile Number must contain only digits")]
+            [Display(Name = "Mobile Number")]
+            public string MobileNumber { get; set; }
         }
     }
 }

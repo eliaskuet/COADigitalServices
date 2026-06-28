@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("COADigitalServices.BLL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fd6a63ee5b4aa46812df9705332e6cda3c8443f1")]
 [assembly: System.Reflection.AssemblyProductAttribute("COADigitalServices.BLL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("COADigitalServices.BLL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

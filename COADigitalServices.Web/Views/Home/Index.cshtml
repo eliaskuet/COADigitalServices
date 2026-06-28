@@ -1,4 +1,4 @@
-﻿@{
+﻿@* @{
     ViewData["Title"] = "Home Page";
 }
 
@@ -6,3 +6,826 @@
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+ *@
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<!-- Content Wrapper. Contains page content
+    <div class="content-wrapper">
+    -->
+<div class="">
+
+    <!-- Main content -->
+    <section class="content" style="width: 100%;">
+        <div class="container-fluid">
+            <h3 class="mb-2" style="color: green; font-weight: bold; text-decoration: underline; ">Digital Services</h3>
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-12">
+                    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for digital services.." title="Type in a name">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-12" id="divCol">
+                    @* <span style="font-weight: bold"> Nothi & Mailing Apps</span> <br id="breakPoint" style="display: block;" /> *@
+                    <a href="https://nothi.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg"><img src="~/assets/img/bookmarks/nothi_logo_login.png" style="width: 50px;" /> e-Nothi</a>
+                    &nbsp; &nbsp; <a href="https://mail.bcc.net.bd/" target="_blank" class="btn btn-outline-success btn-lg"> <img src="~/assets/img/bookmarks/mail-ico.png" style="width: 40px;" /> MoFL Mail</a>
+                    &nbsp; &nbsp; <a href="https://www.gmail.com/" target="_blank" class="btn btn-outline-secondary btn-lg"> <img src="~/assets/img/bookmarks/Gmail-Logo.png" style="width: 40px;" /> Gmail </a>
+                    &nbsp; &nbsp; <a href="https://www.yahoo.com/" target="_blank" class="btn btn-outline-info btn-lg"> <img src="~/assets/img/bookmarks/ymail.jpg" style="width: 40px;" /> Yahoo Mail </a>
+                    &nbsp; &nbsp; <a href="https://login.microsoftonline.com/" target="_blank" class="btn btn-outline-danger btn-lg"> <img src="~/assets/img/bookmarks/outlook-calendar.png" style="width: 40px;" /> Outlook </a>
+                    &nbsp; &nbsp; <a href="http://www.rajuk.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg"> Rajdhani Unnayan Kartipakkha (RAJUK)</a>
+
+
+                    @* <br id="breakPoint" style="display: block;" /> <br id="breakPoint" style="display: block;" />
+                    <span style="font-weight: bold"> Important Link</span><br id="breakPoint" style="display: block;" />
+
+                    <a href="http://www.cabinet.gov.bd/" target="_blank" class="btn btn-outline-info btn-lg"><img src="~/assets/img/bd-small.png" style="width: 20px;" /> Cabinet Division </a>
+                    &nbsp; &nbsp; <a href="http://www.pmo.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg"><img src="~/assets/img/bd-small.png" style="width: 20px;" /> Prime Minister’s Office </a>
+                    &nbsp; &nbsp; <a href="http://www.bangabhaban.gov.bd/" target="_blank" class="btn btn-outline-success btn-lg"><img src="~/assets/img/bd-small.png" style="width: 20px;" /> President’s Office </a>
+                    &nbsp; &nbsp; <a href="http://www.mopa.gov.bd/" target="_blank" class="btn btn-outline-secondary btn-lg"><img src="~/assets/img/bd-small.png" style="width: 20px;" /> MoPA </a>
+                    &nbsp; &nbsp; <a href="https://services.nidw.gov.bd/nid-pub/" target="_blank" class="btn btn-outline-danger btn-lg"><img src="~/assets/img/bookmarks/logo-ec.png" style="width: 40px;" /> NID Correction </a>
+                    &nbsp; &nbsp; <a href="https://www.epassport.gov.bd/landing" target="_blank" class="btn btn-outline-success btn-lg"><img src="~/assets/img/bookmarks/logo-right-sm.png" style="width: 40px;" /> Passport </a>
+                    &nbsp; &nbsp; <a href="https://everify.bdris.gov.bd/" target="_blank" class="btn btn-outline-success btn-lg"><img src="~/assets/img/bookmarks/logo-right-sm.png" style="width: 40px;" /> Birth and Death Verification </a>
+                    &nbsp; &nbsp; <a href="http://www.parliament.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg"><img src="~/assets/img/bd-small.png" style="width: 20px;" /> Parliament Secretariat </a>
+                    <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                    <a href="http://www.mofl.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg"><img src="~/assets/img/bd-small.png" style="width: 20px;" /> MoFL</a>
+                    <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                    <a href="http://www.fisheries.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">THE DEPARTMENT OF FISHERIES (DOF)</a>
+                    &nbsp; &nbsp; <a href="http://www.dls.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg"> DEPARTMENT OF LIVESTOCK SERVICES (DLS)</a>
+                    &nbsp; &nbsp; <a href="http://www.bfdc.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Fisheries Development Corporation (BFDC)</a>
+                    &nbsp; &nbsp; <a href="http://www.fri.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">BANGLADESH FISHERIES RESEARCH INSTITUTE (BFRI)</a>
+                    <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                    <a href="http://www.blri.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Livestock Research Institute (BLRI)</a>
+                    &nbsp; &nbsp; <a href="http://www.mfacademy.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Marine Fisheries Academy</a>
+                    &nbsp; &nbsp; <a href="http://flid.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Fisheries and Livestock Information Department</a>
+                    &nbsp; &nbsp; <a href="http://bvc.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Veterinary Council</a>
+                    <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+
+                    <a href="http://www.moedu.gov.bd/" target="_blank" class="btn btn-outline-danger btn-lg"><img src="~/assets/img/bd-small.png" style="width: 20px;" /> Ministry of Education (MoEDU)</a>
+                    <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                    &nbsp; &nbsp; <a href="http://shed.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg"> Secondary and Higher Education Division</a>
+                    &nbsp; &nbsp; <a href="http://tmed.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg"> Technical And Madrasha Education Division</a>
+                    &nbsp; &nbsp; <a href="http://www.scouts.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Scouts</a>
+                    <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                    <a href="http://www.pmeat.gov.bd/" target="_blank" class="btn btn-outline-danger btn-lg">Prime Minister’s Education Assistance Trust</a>
+                    &nbsp; &nbsp; <a href="http://www.educationboard.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Secondary and Higher Secondary Education Board, Bangladesh</a>
+                    &nbsp; &nbsp; <a href="http://comillaboard.portal.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Board of Intermediate and Secondary Education, Comilla</a>
+                    <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+
+                    <a href="http://jessoreeducationboard.portal.gov.bd/" target="_blank" class="btn btn-outline-danger btn-lg">Board of Secondary and Higher Secondary Education, Jessore</a>
+                    &nbsp; &nbsp; <a href="http://www.rajshahieducationboard.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Board of Intermediate and Secondary Education, Rajshahi</a>
+                    &nbsp; &nbsp; <a href="http://barisalboard.portal.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Board of Intermediate and Secondary Education, Barisal</a>
+                    <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                    <a href="http://www.bise-ctg.gov.bd/" target="_blank" class="btn btn-outline-danger btn-lg">Board of Intermediate and Secondary Education, Chittagong</a>
+                    &nbsp; &nbsp; <a href="http://www.bncu.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh National Commission for UNESCO</a>
+                    &nbsp; &nbsp; <a href="http://www.dinajpureducationboard.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Board of Intermediate and Secondary Education, Dinajpur</a>
+                    <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                    <a href="http://sylhetboard.gov.bd/" target="_blank" class="btn btn-outline-danger btn-lg">Board of Intermediate and Secondary Education, Sylhet</a>
+                    &nbsp; &nbsp; <a href="http://www.terbb.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Non Government Teacher Employee Retirement Benefit Board</a>
+                    &nbsp; &nbsp; <a href="http://www.banbeis.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Bureau of Educational Information and Statistics (BANBEIS)</a>
+                    <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                    <a href="http://www.heqep-ugc.gov.bd/" target="_blank" class="btn btn-outline-danger btn-lg"> Higher Education Quality Enhancement Project (HEQEP)</a>
+                    &nbsp; &nbsp; <a href="http://www.dshe.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Directorate of Secondary and Higher Education (DSHE)</a>
+                    &nbsp; &nbsp; <a href="http://www.nctb.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">National Curriculum and Textbook Board (NCTB)</a>
+                    <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+
+                    <a href="http://www.mohpw.gov.bd/" target="_blank" class="btn btn-outline-info btn-lg"><img src="~/assets/img/bd-small.png" style="width: 20px;" /> Ministry of Housing and Public Works </a>
+                    <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                    &nbsp; &nbsp; <a href="http://www.pwd.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg"> Public Works Department</a>
+                    &nbsp; &nbsp; <a href="http://www.architecture.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg"> Department of Architecture</a>
+                    <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                    <a href="http://www.udd.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Department of Urban Development (UDD)</a>
+                    &nbsp; &nbsp; <a href="http://www.doia.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Directorate of Internal Audit</a>
+                    &nbsp; &nbsp; <a href="http://www.doia.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">
+                    Coxsbazar Development Authority
+                </a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://www.nha.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">National Housing Authority (NHA)</a>
+                &nbsp; &nbsp; <a href="http://www.rajuk.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg"> Rajdhani Unnayan Kartipakkha (RAJUK)</a>
+                &nbsp; &nbsp; <a href="http://www.portal.cda.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg"> Chittagong Unnayan Authority (CDA)</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://rda.rajshahidiv.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Rajshahi Unnayan Authority (RDA)</a>
+                &nbsp; &nbsp; <a href="http://www.kda.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg"> Khulna Unnayan Authority (KDA)</a>
+                &nbsp; &nbsp; <a href="http://www.hbri.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg"> Housing & Building Research Institute (HBRI)</a>
+                &nbsp; &nbsp; <a href="http://www.doga.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg"> Directorate of Government Accommodation</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+
+                <a href="http://www.minland.gov.bd/" target="_blank" class="btn btn-outline-success btn-lg"><img src="~/assets/img/bd-small.png" style="width: 20px;" /> Ministry Of Land </a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://coa-revenue.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Office of the Controller of Accounts (Revenue)</a>
+                &nbsp; &nbsp; <a href="http://www.latc.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Land Administration Training Centre (LATC)</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://www.dlrs.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Land Record and Survey Department</a>
+                &nbsp; &nbsp; <a href="http://www.lab.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg"> Land Appeal Board</a>
+                &nbsp; &nbsp; <a href="http://www.lrb.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg"> Land Reforms Board</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://www.mochta.gov.bd/" target="_blank" class="btn btn-outline-secondary btn-lg"><img src="~/assets/img/bd-small.png" style="width: 20px;" /> Ministry of Chittagong Hill Tracts Affairs </a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.chtdb.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg"> Chittagong Hill Tracts Development Board</a>
+                &nbsp; &nbsp; <a href="http://www.chtrc.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg"> Chittagong Hill Tracts Regional Council</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://www.bhdc.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg"> Bandarban Hill District Council</a>
+                &nbsp; &nbsp; <a href="http://www.rhdc.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Rangamati Hill District Council</a>
+                &nbsp; &nbsp; <a href="http://www.tratf.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg"> Tribal Refugee Affairs Task Force</a>
+                &nbsp; &nbsp; <a href="http://www.khdc.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Khagrachari Hill District Council</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://www.mocat.gov.bd/" target="_blank" class="btn btn-outline-info btn-lg"><img src="~/assets/img/bd-small.png" style="width: 20px;" /> Ministry of Civil Aviation and Tourism </a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://tourismboard.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg"> Bangladesh Tourism Board</a>
+                &nbsp; &nbsp; <a href="http://www.caab.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg"> Civil Aviation Authority of Bangladesh</a>
+                &nbsp; &nbsp; <a href="http://www.parjatan.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Parjatan Corporation</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://www.biman.gov.bd/" target="_blank" class="btn btn-outline-info btn-lg"> Bangladesh Air </a>
+                &nbsp; &nbsp; <a href="http://www.hil.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg"> Hotels International Limited</a>
+                &nbsp; &nbsp; <a href="http://www.bsl.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg"> Bangladesh Services Limited (BSL)</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://www.minlaw.gov.bd/" target="_blank" class="btn btn-outline-danger btn-lg"><img src="~/assets/img/bd-small.png" style="width: 20px;" /> Ministry of Law, Justice and Parliamentary Affairs </a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.jscbd.org.bd/" target="_blank" class="btn btn-outline-primary btn-lg"> Bangladesh Judicial Service Commission</a>
+                &nbsp; &nbsp; <a href="http://nlaso.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg"> National Legal Aid Agency</a>
+                &nbsp; &nbsp; <a href="http://rd.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Directorate of Registration</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://attorneygeneral.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg"> Office of the Attorney General</a>
+                &nbsp; &nbsp; <a href="http://www.lc.gov.bd/" target="_blank" class="btn btn-outline-danger btn-lg"> Bangladesh Law Commission</a>
+                &nbsp; &nbsp; <a href="http://www.nhrc.org.bd/" target="_blank" class="btn btn-outline-primary btn-lg"> Bangladesh National Human Rights Commission</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://www.msw.gov.bd/" target="_blank" class="btn btn-outline-info btn-lg"><img src="~/assets/img/bd-small.png" style="width: 20px;" /> Ministry of Social Welfare </a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://nass.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">National Academy of Social Services</a>
+                &nbsp; &nbsp; <a href="http://www.jpuf.gov.bd/" target="_blank" class="btn btn-outline-danger btn-lg"> National Foundation for Development of the Disabled Persons</a>
+                &nbsp; &nbsp; <a href="http://www.dss.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg"> Department of Social Services</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://www.bnswc.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh National Social Welfare Council</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://www.moa.gov.bd/" target="_blank" class="btn btn-outline-success btn-lg"><img src="~/assets/img/bd-small.png" style="width: 20px;" /> Ministry of Agriculture</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://www.sca.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Seed Certification Agency (SCA)</a>
+                &nbsp; &nbsp; <a href="http://www.nata.gov.bd/" target="_blank" class="btn btn-outline-danger btn-lg">National Agriculture Training Academy (NATA)</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://hortex.portal.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Hortex Foundation</a>
+                &nbsp; &nbsp; <a href="http://barc.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Agricultural Research Council (BARC)</a>
+                &nbsp; &nbsp; <a href="http://www.badc.gov.bd/" target="_blank" class="btn btn-outline-danger btn-lg">Bangladesh Agricultural Development Corporation (BADC)</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://www.dae.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg"> Department of Agricultural Extension</a>
+                &nbsp; &nbsp; <a href="http://www.brri.gov.bd/" target="_blank" class="btn btn-outline-danger btn-lg">Bangladesh Rice Research Institute</a>
+                &nbsp; &nbsp; <a href="http://www.bari.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Agricultural Research Institute (BARI)</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://www.bjri.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Jute Research Institute (BJRI)</a>
+                &nbsp; &nbsp; <a href="http://www.bina.gov.bd/" target="_blank" class="btn btn-outline-danger btn-lg"> Bangladesh Institute of Nuclear Agriculture (BINA)</a>
+                &nbsp; &nbsp; <a href="http://www.bsri.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg"> Bangladesh Sugarcrop Research Institute (BSRI)</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://www.bmda.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Barind Multipurpose Development Authority (BMDA)</a>
+                &nbsp; &nbsp; <a href="http://cdb.gov.bd/" target="_blank" class="btn btn-outline-danger btn-lg">Cotton Development Board</a>
+                &nbsp; &nbsp; <a href="http://www.srdi.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg"> Soil Resource Development Institute (SRDI)</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://www.dam.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg"> Department of Agricultural Marketing (DAM)</a>
+                &nbsp; &nbsp; <a href="http://www.ais.gov.bd/" target="_blank" class="btn btn-outline-danger btn-lg"> Agriculture Information Service (AIS)</a>
+                &nbsp; &nbsp; <a href="http://www.birtan.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg"> Bangladesh Institute of Research and Training on Applied Nutrition (BIRTAN)</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.dss.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Department of Social Services</a>
+                &nbsp; &nbsp; <a href="http://www.mohfw.gov.bd/" target="_blank" class="btn btn-outline-secondary btn-lg">Ministry of Health & Family Welfare</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.mofa.gov.bd/" target="_blank" class="btn btn-outline-info btn-lg"><img src="~/assets/img/bd-small.png" style="width: 20px;" /> Ministry of Foreign Affairs</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://fsa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Foreign Service Academy (FSA)</a>
+                &nbsp; &nbsp; <a href="http://algiers.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Embassy of the People’s Republic of Bangladesh, Algiers, Algeria</a>
+                &nbsp; &nbsp; <a href="http://cairo.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Embassy of the People’s Republic of Bangladesh, Cairo, Egypt</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://addisababa.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Embassy of the People’s Republic of Bangladesh, Addis Ababa, Ethiopia</a>
+                &nbsp; &nbsp; <a href="http://nairobi.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">High Commission for the People’s Republic of Bangladesh, Nairobi, Kenya</a>
+                &nbsp; &nbsp; <a href="http://tripoli.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Embassy of the People’s Republic of Bangladesh, Tripoli, Libya</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://portlouis.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">High Commission for the People’s Republic of Bangladesh, Port Louis, Republic of Mauritius</a>
+                &nbsp; &nbsp; <a href="http://rabat.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Embassy of the People’s Republic of Bangladesh, Rabat</a>
+                &nbsp; &nbsp; <a href="http://abuja.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">High Commission for the People’s Republic of Bangladesh, Abuja, Nigeria</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://pretoria.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">High Commission for the People’s Republic of Bangladesh, Pretoria</a>
+                &nbsp; &nbsp; <a href="http://brasilia.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Embassy of the People’s Republic of Bangladesh, Brasilia DF, Brazil</a>
+                &nbsp; &nbsp; <a href="http://ottawa.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">High Commission for the People’s Republic of Bangladesh, Ottawa</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://toronto.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Consulate General of the People's Republic of Bangladesh, Toronto</a>
+                &nbsp; &nbsp; <a href="http://mexico.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Embassy of the People’s Republic of Bangladesh, Mexico</a>
+                &nbsp; &nbsp; <a href="http://losangeles.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Consulate General of the People’s Republic of Bangladesh, Los Angeles</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://nycg.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Consulate General of the People’s Republic of Bangladesh, New York</a>
+                &nbsp; &nbsp; <a href="http://nypm.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Permanent Mission of Bangladesh to the United Nations, New York</a>
+                &nbsp; &nbsp; <a href="http://washington.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Embassy of the People’s Republic of Bangladesh, Washington, DC</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://florida.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Consulate General of the People’s Republic of Bangladesh Florida</a>
+                &nbsp; &nbsp; <a href="http://canberra.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">High Commission for the People’s Republic of Bangladesh, Canberra</a>
+                &nbsp; &nbsp; <a href="http://sydney.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Consulate General of the People's Republic of Bangladesh, Sydney</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://beijing.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Embassy of the People’s Republic of Bangladesh, Beijing, China</a>
+                &nbsp; &nbsp; <a href="http://hongkong.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Consulate General of the People’s Republic of Bangladesh, Hong Kong</a>
+                &nbsp; &nbsp; <a href="http://kunming.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Consulate General of the People’s Republic of Bangladesh, Kunming</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://tokyo.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Embassy of the People’s Republic of Bangladesh, Tokyo</a>
+                &nbsp; &nbsp; <a href="http://seoul.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Embassy of the People’s Republic of Bangladesh, Seoul</a>
+                &nbsp; &nbsp; <a href="http://warsaw.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Embassy of the People´s Republic of Bangladesh, Poland</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://bucharest.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Embassy of the People's Republic of Bangladesh, Bucharest</a>
+                &nbsp; &nbsp; <a href="http://moscow.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Embassy of the People's Republic of Bangladesh, Moscow</a>
+                &nbsp; &nbsp; <a href="http://ankara.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Embassy of the People’s Republic of Bangladesh, Ankara</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://istanbul.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Consulate General of Bangladesh, Istanbul</a>
+                &nbsp; &nbsp; <a href="http://tashkent.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Embassy of the People’s Republic of Bangladesh to the Republic of Uzbekistan, Tashkent</a>
+                &nbsp; &nbsp; <a href="http://thimphu.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Embassy of the People's Republic of Bangladesh, Thimphu, Bhutan</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://agartala.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Assistant High Commission, Agartala</a>
+                &nbsp; &nbsp; <a href="http://chennai.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Deputy High Commission for the People's Republic of Bangladesh, Chennai, India</a>
+                &nbsp; &nbsp; <a href="http://guwahati.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Assistant High Commission of Bangladesh, Guwahati</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://kolkata.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Deputy High Commission for the People’s Republic of Bangladesh, Kolkata</a>
+                &nbsp; &nbsp; <a href="http://mumbai.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Deputy High Commission for the People's Republic of Bangladesh, Mumbai, India</a>
+                &nbsp; &nbsp; <a href="http://newdelhi.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">High Commission for the People’s Republic of Bangladesh, New Delhi, India</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://male.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Embassy of the People’s Republic of Bangladesh, Male, Republic of Maldives</a>
+                &nbsp; &nbsp; <a href="http://kathmandu.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Embassy of the People’s Republic of Bangladesh, Kathmandu</a>
+                &nbsp; &nbsp; <a href="http://islamabad.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">High Commission for the People’s Republic of Bangladesh, Islamabad, Pakistan</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://karachi.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Deputy High Commission, Karachi, Pakistan</a>
+                &nbsp; &nbsp; <a href="http://colombo.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">High Commission for the People’s Republic of Bangladesh, Colombo</a>
+                &nbsp; &nbsp; <a href="http://bandarseribegawan.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">High Commission of the People's Republic of Bangladesh, Bandar Seri Begawan</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://jakarta.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Embassy of the People’s Republic of Bangladesh, Jakarta</a>
+                &nbsp; &nbsp; <a href="http://kualalumpur.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">High Commission for the People’s Republic of Bangladesh, Kuala Lumpur</a>
+                &nbsp; &nbsp; <a href="http://sittwe.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Consulate of the People’s Republic of Bangladesh, Sittwe, Rakhine State, Myanmar</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://yangon.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Embassy of the People’s Republic of Bangladesh, Yangon, Myanmar</a>
+                &nbsp; &nbsp; <a href="http://manila.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Embassy of the People’s Republic of Bangladesh, Manila</a>
+                &nbsp; &nbsp; <a href="http://singapore.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">High Commission for the People’s Republic of Bangladesh, Singapore</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://bangkok.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Embassy of the People’s Republic of Bangladesh, Bangkok</a>
+                &nbsp; &nbsp; <a href="http://hanoi.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Embassy of the People’s Republic of Bangladesh, Hanoi</a>
+                &nbsp; &nbsp; <a href="http://manama.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Embassy of the People's Republic of Bangladesh, Manama</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://tehran.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Embassy of the People’s Republic of Bangladesh, Tehran</a>
+                &nbsp; &nbsp; <a href="http://baghdad.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Embassy of the Peoples Republic of Bangladesh, Baghdad, Iraq</a>
+                &nbsp; &nbsp; <a href="http://amman.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Embassy of the People’s Republic of Bangladesh, Amman, Jordan</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://kuwait.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Embassy of the People’s Republic of Bangladesh, Kuwait</a>
+                &nbsp; &nbsp; <a href="http://beirut.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Embassy of the People’s Republic of Bangladesh, Beirut, Lebanon</a>
+                &nbsp; &nbsp; <a href="http://muscat.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Embassy of the People’s Republic of Bangladesh, Muscat</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://doha.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Embassy of the People’s Republic of Bangladesh, Doha, Qatar</a>
+                &nbsp; &nbsp; <a href="http://jeddah.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Consulate General of the People's Republic of Bangladesh, Jeddah</a>
+                &nbsp; &nbsp; <a href="http://riyadh.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Embassy, Riyadh, Saudi Arabia</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://abudhabi.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Embassy of the People’s Republic of Bangladesh, Abu Dhabi, UAE</a>
+                &nbsp; &nbsp; <a href="http://dubai.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">People's Republic of Bangladesh, Dubai, UAE</a>
+                &nbsp; &nbsp; <a href="http://vienna.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Embassy & Permanent Mission of the People’s Republic of Bangladesh to the UN Offices and other International Organizations in Vienna</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://brussels.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Embassy of the People's Republic of Bangladesh, Brussels</a>
+                &nbsp; &nbsp; <a href="http://copenhagen.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">The Embassy of the People’s Republic of Bangladesh, Copenhagen</a>
+                &nbsp; &nbsp; <a href="http://paris.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Embassy of the People’s Republic of Bangladesh, Paris</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://berlin.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Embassy of the People’s Republic of Bangladesh, Berlin</a>
+                &nbsp; &nbsp; <a href="http://athens.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Embassy of the People's Republic of Bangladesh, Athens, Greece</a>
+                &nbsp; &nbsp; <a href="http://milan.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Consulate General of the People’s Republic of Bangladesh, Milan</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://rome.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Embassy, Rome, Italy</a>
+                &nbsp; &nbsp; <a href="http://hague.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Embassy, The Hague, The Netherlands</a>
+                &nbsp; &nbsp; <a href="http://lisbon.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Embassy of the People´s Republic of Bangladesh, Lisbon, Portugal</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://madrid.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Embassy of the People's Republic of Bangladesh, Madrid</a>
+                &nbsp; &nbsp; <a href="http://stockholm.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Embassy, Stockholm, Sweden</a>
+                &nbsp; &nbsp; <a href="http://geneva.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Permanent Mission of Bangladesh to the UN Office & other International Organizations in Geneva</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://birmingham.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Assistant High Commission for the People’s Republic of Bangladesh, Birmingham, United Kingdom</a>
+                &nbsp; &nbsp; <a href="http://london.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh High Commission, London, UK</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://manchester.mofa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Assistant High Commission for the People’s Republic of Bangladesh, Manchester, UK</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://www.mowca.gov.bd/" target="_blank" class="btn btn-outline-danger btn-lg"><img src="~/assets/img/bd-small.png" style="width: 20px;" /> Ministry of Women and Children Affairs</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://www.dwa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Department of Women Affairs</a>
+                &nbsp; &nbsp; <a href="http://www.jms.gov.bd/bn/" target="_blank" class="btn btn-outline-primary btn-lg">National Women Organization</a>
+                &nbsp; &nbsp; <a href="http://www.shishuacademy.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Shishu Academy</a>
+                &nbsp; &nbsp; <a href="http://www.joyeeta.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Joyeeta Foundation</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://www.motj.gov.bd/" target="_blank" class="btn btn-outline-info btn-lg"><img src="~/assets/img/bd-small.png" style="width: 20px;" /> Ministry of Textiles & Jute</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://www.motj.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Ministry of Textiles & Jute</a>
+                &nbsp; &nbsp; <a href="http://www.bjc.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Jute Corporation</a>
+                &nbsp; &nbsp; <a href="http://www.dot.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Textile Directorate</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://www.bjmc.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Jute Mills Corporation (BJMC)</a>
+                &nbsp; &nbsp; <a href="http://www.dot.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Department of Textiles</a>
+                &nbsp; &nbsp; <a href="http://www.bhb.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Handloom Board (BHB)</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://www.btmc.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Textiles Mills corporation</a>
+                &nbsp; &nbsp; <a href="http://www.bsrti.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Sericulture Research and Training Institute (BSRT)</a>
+                &nbsp; &nbsp; <a href="http://www.bsb.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Sericulture Development Board (BSDB)</a>
+                &nbsp; &nbsp; <a href="http://www.dgjute.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Department of Jute (DOJ)</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://www.mpemr.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg"><img src="~/assets/img/bd-small.png" style="width: 20px;" /> Ministry of Power, Energy and Mineral Resources</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.powerdivision.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Power Division</a>
+                &nbsp; &nbsp; <a href="http://www.emrd.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Energy and Mineral Resources Division</a>
+                &nbsp; &nbsp; <a href="http://www.sreda.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Sustainable and Renewable Energy Development Authority (SREDA)</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.desco.org.bd/" target="_blank" class="btn btn-outline-primary btn-lg">DESCO</a>
+                &nbsp; &nbsp; <a href="http://www.dpdc.org.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Dhaka Power Distribution Company Limited</a>
+                &nbsp; &nbsp; <a href="http://www.apscl.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Ashuganj Power Station Company Ltd</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://egcb.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Electricity Generation Company of Bangladesh Ltd</a>
+                &nbsp; &nbsp; <a href="http://www.wzpdcl.org.bd/" target="_blank" class="btn btn-outline-primary btn-lg">West Zone Power Distribution Company Ltd</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.reb.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Rural Electrification Board</a>
+                &nbsp; &nbsp; <a href="http://rpcl.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Rural Power Company Limited</a>
+                &nbsp; &nbsp; <a href="http://www.powercell.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Power Cell</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://pgcb.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Power Grid Company of Bangladesh Ltd</a>
+                &nbsp; &nbsp; <a href="http://www.bpdb.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Power Development Board</a>
+                &nbsp; &nbsp; <a href="http://www.eprc.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Energy and Power Research Council (EPRC)</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.cpgcbl.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Coal Power Generation Company Bangladesh Limited (CPGCBL)</a>
+                &nbsp; &nbsp; <a href="http://eacei.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Office of the Chief Electric Inspector (EACEI)</a>
+                &nbsp; &nbsp; <a href="http://nwpgcl.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">North-West Power Generation Company Limited</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://nesco.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Northern Electricity Supply Company Limited (NESCO)</a>
+                &nbsp; &nbsp; <a href="http://brpowergen.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">BR POWERGEN Ltd.</a>
+                &nbsp; &nbsp; <a href="http://www.bpc.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Petroleum Corporation</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://bgdcl.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bakhrabad Gas Distribution Company Limited</a>
+                &nbsp; &nbsp; <a href="http://www.sgfl.org.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Sylhet Gas Fields Limited</a>
+                &nbsp; &nbsp; <a href="http://bomd.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Mineral Resources Development Bureau</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.bapex.com.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Petroleum Exploration and Production Company Limited</a>
+                &nbsp; &nbsp; <a href="http://www.titasgas.org.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Titas Gas Transmission and Distribution Company</a>
+                &nbsp; &nbsp; <a href="http://www.berc.org.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Energy Regulatory Commission</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.petrobangla.org.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Oil, Gas and Mineral Corporation</a>
+                &nbsp; &nbsp; <a href="http://www.bpi.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Petroleum Institute</a>
+                &nbsp; &nbsp; <a href="http://www.gsb.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Geological Survey of Bangladesh</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.hcu.org.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Hydrocarbon Unit</a>
+                &nbsp; &nbsp; <a href="http://www.rpgcl.org.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Rupantarita Prakritik Gas Company Limited</a>
+                &nbsp; &nbsp; <a href="http://www.explosives.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Department of Explosives</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.kgdcl.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Karnaphuli Gas Distribution Company Limited</a>
+                &nbsp; &nbsp; <a href="http://bgfcl.org.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Gas Fields Company Limited (BGFCL)</a>
+                &nbsp; &nbsp; <a href="http://gtcl.org.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Gas Transmission Company Limited (GTCL)</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://jalalabadgas.org.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Jalalabad Gas Transmission and Distribution System Limited (JGTDSL)</a>
+                &nbsp; &nbsp; <a href="http://pgcl.org.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Pashchimanchal Gas Company Limited (PGCL)</a>
+                &nbsp; &nbsp; <a href="http://sgcl.org.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Sundarban Gas Company Limited (SGCL)</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://bcmcl.org.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Barapukuria Coal Mining Company Limited (BCMCL)</a>
+                &nbsp; &nbsp; <a href="http://mgmcl.org.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Maddhapara Granite Mining Company Limited (MGMCL)</a>
+                &nbsp; &nbsp; <a href="http://pocl.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Padma Oil Company Limited ( POCL)</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://jamunaoil.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Jamuna Oil Company Ltd (Jamuna)</a>
+                &nbsp; &nbsp; <a href="http://mpl.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Meghna Petroleum Limited (MPL)</a>
+                &nbsp; &nbsp; <a href="http://lpgl.portal.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">L P Gas Limited (LPGL)</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://elbl.portal.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Eastern Lubricants Blenders Ltd.</a>
+                &nbsp; &nbsp; <a href="http://saocl.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">SAOCL</a>
+                &nbsp; &nbsp; <a href="http://erl.com.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Eastern Refinery Limited (ERL)</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.mop.gov.bd/" target="_blank" class="btn btn-outline-success btn-lg"><img src="~/assets/img/bd-small.png" style="width: 20px;" /> Ministry of Planning</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.sid.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Statistics and Informatics Division</a>
+                &nbsp; &nbsp; <a href="http://www.imed.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Implementation Monitoring & Evaluation Division</a>
+                &nbsp; &nbsp; <a href="http://www.bids.org.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Institute of Development Studies</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.napd.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">National Academy for Planning and Development (NAPD)</a>
+                &nbsp; &nbsp; <a href="http://www.bbs.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Bureau of Statistics</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://www.lgd.gov.bd/" target="_blank" class="btn btn-outline-secondary btn-lg"><img src="~/assets/img/bd-small.png" style="width: 20px;" /> Ministry of Local Government, Rural Development and Co-operatives</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.lgd.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Local Government Division</a>
+                &nbsp; &nbsp; <a href="http://www.rdcd.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Rural Development and Co-operatives Division</a>
+                &nbsp; &nbsp; <a href="http://www.lged.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Local Government Engineering Department</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.dphe.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Public Health Engineering Department</a>
+                &nbsp; &nbsp; <a href="http://www.nilg.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">The National Institute of Local Government</a>
+                &nbsp; &nbsp; <a href="http://www.orgbdr.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Office of the Registrar General, Birth and Death Registration</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://dwasa.org.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Dhaka WASA</a>
+                &nbsp; &nbsp; <a href="http://ctg-wasa.org.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Chittagong WASA</a>
+                &nbsp; &nbsp; <a href="http://wasa.khulna.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Khulna WASA</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.rajshahiwasa.org.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Rajshahi WASA</a>
+                &nbsp; &nbsp; <a href="http://dscc.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Dhaka South City Corporation</a>
+                &nbsp; &nbsp; <a href="http://www.dncc.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Dhaka North City Corporation</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.ccc.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Chittagong City Corporation</a>
+                &nbsp; &nbsp; <a href="http://xn--%20%20-gknb8f3dix1fbs0fza8hxab6a3msd1b/" target="_blank" class="btn btn-outline-primary btn-lg">Khulna City Corporation</a>
+                &nbsp; &nbsp; <a href="http://barishalcity.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Barishal City Corporation</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.ncc.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Narayanganj City Corporation</a>
+                &nbsp; &nbsp; <a href="http://www.gcc.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Gazipur City Corporation</a>
+                &nbsp; &nbsp; <a href="http://www.rpcc.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Rangpur City Corporation</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.cocc.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Cumilla City Corporation</a>
+                &nbsp; &nbsp; <a href="http://erajshahi.portal.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Rajshahi City Corporation</a>
+                &nbsp; &nbsp; <a href="http://www.scc.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Sylhet City Corporation</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.mcc.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Mymensingh City Corporation</a>
+                &nbsp; &nbsp; <a href="http://www.coop.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Department of Cooperatives</a>
+                &nbsp; &nbsp; <a href="http://www.brdb.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Rural Development Board (BRDB)</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.bard.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Rural Development Board(BARD), Comilla</a>
+                &nbsp; &nbsp; <a href="http://www.rda.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Rural Development Academy (RDA) Bogra</a>
+                &nbsp; &nbsp; <a href="http://www.bapard.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangabandhu academy for poverty alleviation and rural development (BAPARD)</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.milkvita.org.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Milk Producer's Co-Operative Union Ltd.</a>
+                &nbsp; &nbsp; <a href="http://www.bsbl.org.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Samabaya Bank Limited</a>
+                &nbsp; &nbsp; <a href="http://www.sfdf.org.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Small Farmer Development Foundation(SFDF)</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.pdbf.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Palli Daridro Bimochon Foundation(PDBF)</a>
+                &nbsp; &nbsp; <a href="http://www.bncfrd.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh National Co-operative Federation for Rural Development</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.mincom.gov.bd/" target="_blank" class="btn btn-outline-info btn-lg"><img src="~/assets/img/bd-small.png" style="width: 20px;" />Ministry of Commerce</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.btri.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Tea Research Institute (BTRI)</a>
+                &nbsp; &nbsp; <a href="http://ccb.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Competition commission</a>
+                &nbsp; &nbsp; <a href="http://www.bfti.org.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Foreign Trade Institute</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.dncrp.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Directorate of National Consumer Rights Protection</a>
+                &nbsp; &nbsp; <a href="http://www.btc.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Tariff Commission</a>
+                &nbsp; &nbsp; <a href="http://www.ccie.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Office of the Chief Controller of Imports & Exports</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.icab.org.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Institute of Chartered Accountants of Bangladesh</a>
+                &nbsp; &nbsp; <a href="http://www.roc.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Office of the Registrar of Joint Stock Companies and Firms</a>
+                &nbsp; &nbsp; <a href="http://www.icmab.org.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Institute of Cost and Management Accountants</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.tcb.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Trading Corporation of Bangladesh (TCB)</a>
+                &nbsp; &nbsp; <a href="http://www.epb.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Export Promotion Bureau</a>
+                &nbsp; &nbsp; <a href="http://www.teaboard.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Tea Board</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://www.rthd.gov.bd/" target="_blank" class="btn btn-outline-danger btn-lg"><img src="~/assets/img/bd-small.png" style="width: 20px;" />Ministry of Road Transport and Bridges</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.rthd.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Road Transport and Highways Division</a>
+                &nbsp; &nbsp; <a href="http://www.bridgesdivision.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bridges Division</a>
+                &nbsp; &nbsp; <a href="http://dmtcl.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">DHAKA MASS TRANSIT COMPANY LIMITED (DMTCL)</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.dtca.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Dhaka Transport Coordination Authority</a>
+                &nbsp; &nbsp; <a href="http://www.rhd.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Roads and Highways Department</a>
+                &nbsp; &nbsp; <a href="http://www.brtc.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Road Transport Corporation</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.brta.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Road Transport Authority</a>
+                &nbsp; &nbsp; <a href="http://www.bba.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Bridge Authority</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://www.moca.gov.bd/" target="_blank" class="btn btn-outline-info btn-lg"><img src="~/assets/img/bd-small.png" style="width: 20px;" />Ministry of Cultural Affairs</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.archaeology.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Department of Archaeology</a>
+                &nbsp; &nbsp; <a href="http://shilpakala.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Shilpakala Academy</a>
+                &nbsp; &nbsp; <a href="http://www.sonargaonmuseum.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">বাংলাদেশ লোক ও কারুশিল্প ফাউন্ডেশন</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://nazrulinstitute.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Kabi Nazrul Institute</a>
+                &nbsp; &nbsp; <a href="http://nbc.org.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Jatiya Grantha Kendro</a>
+                &nbsp; &nbsp; <a href="http://sonargaonmuseum.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Folk Art & Crafts Foundation</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://kncabirisiri.portal.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Cultural Academy of Minorities, Birishiri, Netrokona</a>
+                &nbsp; &nbsp; <a href="http://knsirangamati.portal.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Cultural Institute for Minorities, Rangamati</a>
+                &nbsp; &nbsp; <a href="http://ksibandarban.portal.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Cultural Institute of Minority Ethnicity, Bandarban</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://coxculturecenter.portal.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Cox's Bazar Cultural Center, Cox's Bazar</a>
+                &nbsp; &nbsp; <a href="http://knsikhagrachari.portal.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Cultural Institute for Minorities, Khagrachari</a>
+                &nbsp; &nbsp; <a href="http://mla.portal.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Monipuri Lolitokala Academy, Kamalganj, Moulvibazar</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.banglaacademy.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangla Academy</a>
+                &nbsp; &nbsp; <a href="http://www.bangladeshmuseum.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh National Museum</a>
+                &nbsp; &nbsp; <a href="http://www.publiclibrary.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Department of Public Libraries</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.copyrightoffice.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Copyright Office Bangladesh</a>
+                &nbsp; &nbsp; <a href="http://www.nanl.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Directorate of Archives and Libraries</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://www.mod.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg"><img src="~/assets/img/bd-small.png" style="width: 20px;" />Ministry of Defence</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://army.mil.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Army</a>
+                &nbsp; &nbsp; <a href="http://navy.mil.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Navy</a>
+                &nbsp; &nbsp; <a href="http://baf.mil.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Air Force</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://dgms.portal.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Directorate General of Medical Service (DGMS)</a>
+                &nbsp; &nbsp; <a href="http://afmc.edu.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Armed Force Medical College</a>
+                &nbsp; &nbsp; <a href="http://cadetcollege.army.mil.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Cadet College</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://dmlc.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Department of Military Lands & Cantonments</a>
+                &nbsp; &nbsp; <a href="http://mes.portal.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Military Engineer Services</a>
+                &nbsp; &nbsp; <a href="http://dcd.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Office of the Chief Administrative Officer</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://ispr.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Directorate of Inter-Services Public Relations</a>
+                &nbsp; &nbsp; <a href="http://doc.portal.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Department of Cyphers</a>
+                &nbsp; &nbsp; <a href="http://modc.portal.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Ministry of Defense Constabulary</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://issb-bd.org/" target="_blank" class="btn btn-outline-primary btn-lg">Inter-military election board</a>
+                &nbsp; &nbsp; <a href="http://basb.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Armed Services Board</a>
+                &nbsp; &nbsp; <a href="http://www.bof.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Ordnance Factories</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.bmd.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Meteorological Department</a>
+                &nbsp; &nbsp; <a href="http://www.cgdf.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Controller General Defence Finance</a>
+                &nbsp; &nbsp; <a href="http://dgdp.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Directorate General of Defence Purchase</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.sparrso.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Space Research and Remote Sensing Organization</a>
+                &nbsp; &nbsp; <a href="http://www.mist.ac.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Military Institute of Science & Technology</a>
+                &nbsp; &nbsp; <a href="http://www.sob.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Survey Of Bangladesh</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.dscsc.mil.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Defence Services Command and Staff College</a>
+                &nbsp; &nbsp; <a href="http://www.ndc.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">National Defence College</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.modmr.gov.bd/" target="_blank" class="btn btn-outline-success btn-lg"><img src="~/assets/img/bd-small.png" style="width: 20px;" />Ministry of Disaster Management and Relief</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.ddm.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Department of Disaster Management</a>
+                &nbsp; &nbsp; <a href="http://www.cpp.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Cyclone Preparedness Programme (CPP)</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.moef.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Ministry of Environment, Forest and Climate Change</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.bcct.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Climate Change Trust</a>
+                &nbsp; &nbsp; <a href="http://rubberboard.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Rubber Board</a>
+                &nbsp; &nbsp; <a href="http://www.bforest.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Forest Department</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.doe.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Department of Environment</a>
+                &nbsp; &nbsp; <a href="http://www.bfri.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Forest Research Institute (BFRI)</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.bfidc.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Forest Industries Development Corporation (BFIDC)</a>
+                &nbsp; &nbsp; <a href="http://www.bnh.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh National Herbarium (BNH)</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+
+                <a href="http://www.probashi.gov.bd/" target="_blank" class="btn btn-outline-info btn-lg"><img src="~/assets/img/bd-small.png" style="width: 20px;" />Ministry of Expatriates’ Welfare and Overseas Employment</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.wewb.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Wage Earners' Welfare Board (WEWB)</a>
+                &nbsp; &nbsp; <a href="http://www.pkb.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Probashi Kallyan Bank</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.bmet.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bureau of Manpower, Employment and Training (BMET)</a>
+                &nbsp; &nbsp; <a href="http://www.boesl.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Overseas Employment and Services Limited. (BOESL)</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.mofood.gov.bd/" target="_blank" class="btn btn-outline-danger btn-lg"><img src="~/assets/img/bd-small.png" style="width: 20px;" />Ministry of Food</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://bfsa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Food Safety Authority</a>
+                &nbsp; &nbsp; <a href="http://fpmu.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Food Planning and Monitoring Unit (FPMU)</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://mfsp.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Modern Food Storage Facilities Project</a>
+                &nbsp; &nbsp; <a href="http://www.dgfood.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Directorate General of Food</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.mha.gov.bd/" target="_blank" class="btn btn-outline-info btn-lg"><img src="~/assets/img/bd-small.png" style="width: 20px;" />Ministry of Home Affairs</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.mhapsd.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Public Security Division</a>
+                &nbsp; &nbsp; <a href="http://www.ssd.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Security Services Division</a>
+                &nbsp; &nbsp; <a href="http://ictbdinvestigation.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">International Crimes Tribunals</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://ntmc.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">NTMC</a>
+                &nbsp; &nbsp; <a href="http://www.dmp.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Dhaka Metropolitan Police</a>
+                &nbsp; &nbsp; <a href="http://www.bgb.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Border Guard Bangladesh</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.ansarvdp.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Ansar and VDP</a>
+                &nbsp; &nbsp; <a href="http://www.coastguard.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Coast Guard</a>
+                &nbsp; &nbsp; <a href="http://www.rab.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Rapid Action Battalion</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.police.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Police Headquarters, Bangladesh Police</a>
+                &nbsp; &nbsp; <a href="http://www.dnc.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Department of Narcotics Control</a>
+                &nbsp; &nbsp; <a href="http://www.prison.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Department of Prisons</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.dip.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Department of Immigration and Passports</a>
+                &nbsp; &nbsp; <a href="http://www.fireservice.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">BANGLADESH FIRE SERVICE AND CIVIL DEFENCE</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.moind.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg"><img src="~/assets/img/bd-small.png" style="width: 20px;" />Ministry of Industries</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.cddl.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Chittagong Dry Dock Limited</a>
+                &nbsp; &nbsp; <a href="http://www.dpdt.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Department of Patents, Designs and Trademarks (DPDT)</a>
+                &nbsp; &nbsp; <a href="http://smcif.portal.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Small, Micro and Cottage Industry Foundation (SMCIF)</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.dapfcl.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">DAP Fertilizer Company Limited (DAPFCL)</a>
+                &nbsp; &nbsp; <a href="http://www.smef.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Small & Medium Enterprise Foundation (SMEF)</a>
+                &nbsp; &nbsp; <a href="http://bab.portal.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Accreditation Board</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.boiler.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Office of The Chief Inspector of Boilers</a>
+                &nbsp; &nbsp; <a href="http://www.bcic.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Chemical Industries Corporation (BCIC)</a>
+                &nbsp; &nbsp; <a href="http://www.bsec.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Steel & Engineering Corporation (BSEC)</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.bscic.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Small and Cottage Industries Corporation (BSCIC)</a>
+                &nbsp; &nbsp; <a href="http://www.bim.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Institute of Management (BIM)</a>
+                &nbsp; &nbsp; <a href="http://www.bsti.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Standards and Testing Institution (BSTI)</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.bitac.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Industrial and Technical Assistance Center (BITAC)</a>
+                &nbsp; &nbsp; <a href="http://www.npo.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">National Productivity Organization (NPO)</a>
+                &nbsp; &nbsp; <a href="http://www.bsfic.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Sugar & Food Industries Corporation</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://www.mole.gov.bd/" target="_blank" class="btn btn-outline-success btn-lg"><img src="~/assets/img/bd-small.png" style="width: 20px;" />Ministry of Labour and Employment</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://centralfund.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Central fund</a>
+                &nbsp; &nbsp; <a href="http://dife.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Department of Inspection for Factory and Establishment</a>
+                &nbsp; &nbsp; <a href="http://www.dol.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Department of Labour</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://lat.portal.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Labor Appeals Tribunal</a>
+                &nbsp; &nbsp; <a href="http://www.mwb.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Lowest wage board</a>
+                &nbsp; &nbsp; <a href="http://www.nsda.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">National Skills Development Council</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.blwf.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Labor Welfare Foundation</a>
+                &nbsp; &nbsp; <a href="http://www.clu-mole.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Child Labour Unit</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.molwa.gov.bd/" target="_blank" class="btn btn-outline-secondary btn-lg"><img src="~/assets/img/bd-small.png" style="width: 20px;" />Ministry of Liberation War Affairs</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.jamuka.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Jatio Muktijoddha Council (Jamuka)</a>
+                &nbsp; &nbsp; <a href="http://www.bffwt.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Freedom Fighter Welfare Trust</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.ictd.gov.bd/" target="_blank" class="btn btn-outline-info btn-lg"><img src="~/assets/img/bd-small.png" style="width: 20px;" />Ministry of Posts, Telecommunications and Information Technology</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.ptd.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Posts and Telecommunications Division</a>
+                &nbsp; &nbsp; <a href="http://www.ictd.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">ICT Division</a>
+                &nbsp; &nbsp; <a href="http://www.btcl.com.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Telecommunications Company Limited</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.btrc.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Telecommunication Regulatory Commission</a>
+                &nbsp; &nbsp; <a href="http://www.bdpost.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Post Directorate, Bangladesh Postal Department</a>
+                &nbsp; &nbsp; <a href="http://www.bcsl.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Cable Shilpa Ltd</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://bscl.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Satellite Company Limited</a>
+                &nbsp; &nbsp; <a href="http://www.tss.com.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Telephone Shilpo Sangshta</a>
+                &nbsp; &nbsp; <a href="http://www.bsccl.com.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Submarine Cable Company Limited (BSCCL)</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.teletalk.com.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Teletalk Bangladesh</a>
+                &nbsp; &nbsp; <a href="http://www.telecomdept.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Directorate of Telecommunications</a>
+                &nbsp; &nbsp; <a href="http://www.doict.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Directorate of Information & Communication Technology</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.bcc.net.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Computer Council (BCC)</a>
+                &nbsp; &nbsp; <a href="http://www.cca.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Office of the Controller of Certifying Authorities (CCA)</a>
+                &nbsp; &nbsp; <a href="http://www.bhtpa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Hi-Tech Park Authority</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.a2i.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Access to Information (a2i) Project</a>
+                &nbsp; &nbsp; <a href="http://dsa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Digital Security Agency</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://www.mora.gov.bd/" target="_blank" class="btn btn-outline-danger btn-lg"><img src="~/assets/img/bd-small.png" style="width: 20px;" /> Ministry of Religious Affairs</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.brwt.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Buddhist Religious Welfare Trust</a>
+                &nbsp; &nbsp; <a href="http://haj-jeddah.portal.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Haj Office, Jeddah</a>
+                &nbsp; &nbsp; <a href="http://www.islamicfoundation.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Islamic Foundation</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.hajj.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Hajj Office</a>
+                &nbsp; &nbsp; <a href="http://www.waqf.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Waqf Administration</a>
+                &nbsp; &nbsp; <a href="http://www.crwt.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">THE CHRISTIAN RELIGIOUS WELFARE TRUST (CRWT)</a>
+                &nbsp; &nbsp; <a href="http://www.hindutrust.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Hindu Religious Welfare Trust</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.mopme.gov.bd/" target="_blank" class="btn btn-outline-info btn-lg"><img src="~/assets/img/bd-small.png" style="width: 20px;" />Ministry of Primary and Mass Education</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://skt.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Children Welfare Trust</a>
+                &nbsp; &nbsp; <a href="http://www.dpe.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Directorate of Primary Education</a>
+                &nbsp; &nbsp; <a href="http://www.bnfe.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bureau of Non-Formal Education (BNFE)</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.nape.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">National Academy for Primary Education</a>
+                &nbsp; &nbsp; <a href="http://cpeimu.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Compulsory Primary Education Implementation Monitoring Unit (CPEIMU)</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.mor.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg"><img src="~/assets/img/bd-small.png" style="width: 20px;" /> Ministry of Railways</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://dri.portal.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Department of Railway Inspection</a>
+                &nbsp; &nbsp; <a href="http://www.railway.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Railway</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.mos.gov.bd/" target="_blank" class="btn btn-outline-success btn-lg"><img src="~/assets/img/bd-small.png" style="width: 20px;" />Ministry of Shipping</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.nrccb.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">National River Conservation Commission</a>
+                &nbsp; &nbsp; <a href="http://www.bsbk.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Land Port Authority</a>
+                &nbsp; &nbsp; <a href="http://www.macademy.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Marine Academy</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.biwta.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Inland Water Transport Authority</a>
+                &nbsp; &nbsp; <a href="http://www.biwtc.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Inland Water Transport Corporation</a>
+                &nbsp; &nbsp; <a href="http://www.dos.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Department of Shipping</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.cpa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Chittagong Port Authority</a>
+                &nbsp; &nbsp; <a href="http://www.mpa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Mongla Port Authority</a>
+                &nbsp; &nbsp; <a href="http://www.nmi.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">National Maritime Institute</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://ppa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Payra Port Authority</a>
+                &nbsp; &nbsp; <a href="http://dos.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Department of Shipping</a>
+                &nbsp; &nbsp; <a href="http://dsw.portal.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Directorate of Welfare of Sailors and Expatriate Workers</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://www.most.gov.bd/" target="_blank" class="btn btn-outline-secondary btn-lg"><img src="~/assets/img/bd-small.png" style="width: 20px;" />Ministry of Science and Technology</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.baec.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Atomic Energy Commission</a>
+                &nbsp; &nbsp; <a href="http://www.bcsir.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Council of Scientific and Industrial Research (BCSIR)</a>
+                &nbsp; &nbsp; <a href="http://www.nmst.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">National Museum Of Science and Technology</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.nib.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">National Institute of bayotekanolaji</a>
+                &nbsp; &nbsp; <a href="http://www.novotheatre.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangabandhu Sheikh Mujibur Rahman Novo Theatre</a>
+                &nbsp; &nbsp; <a href="http://www.bansdoc.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh National Scientific and Technical Documentation Centre</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.baera.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Atomic Energy Regulatory Authority</a>
+                &nbsp; &nbsp; <a href="http://www.bori.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Oceanographic Research Institute</a>
+                &nbsp; &nbsp; <a href="http://www.rooppurnpp.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Construction of Rooppur Nuclear Power Plant Project</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.bstft.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangabandhu Science and Technology Fellowship Trust</a>
+                &nbsp; &nbsp; <a href="http://bricm.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Reference Institute for Chemical Measurements (BRICM)</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.mowr.gov.bd/" target="_blank" class="btn btn-outline-info btn-lg"><img src="~/assets/img/bd-small.png" style="width: 20px;" />Ministry of Water Resources</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://dbhwd.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Department of Bangladesh Haor and Wetlands Development</a>
+                &nbsp; &nbsp; <a href="http://www.rri.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">River Research Institute (RRI)</a>
+                &nbsp; &nbsp; <a href="http://www.cegisbd.com/" target="_blank" class="btn btn-outline-primary btn-lg">Center for Environmental and Geographic Information Services</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.iwmbd.org/" target="_blank" class="btn btn-outline-primary btn-lg">Institute of Water Modelling (IWM)</a>
+                &nbsp; &nbsp; <a href="http://www.warpo.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Water Resources Planning Organization (WARPO)</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.bwdb.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Water Development Board</a>
+                &nbsp; &nbsp; <a href="http://www.jrcb.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Joint River Commission, Bangladesh</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.moysports.gov.bd/" target="_blank" class="btn btn-outline-danger btn-lg"><img src="~/assets/img/bd-small.png" style="width: 20px;" />Ministry of Youth and Sports</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://bksp.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Krira Shikkha Protisthan (BKSP)</a>
+                &nbsp; &nbsp; <a href="http://www.dyd.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Department of Youth Development</a>
+                &nbsp; &nbsp; <a href="http://bkkf.org.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangabandhu Krirashebi Kalyan Foundation</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://shniyd.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Sheikh Hasina National Institute of Youth Development</a>
+                &nbsp; &nbsp; <a href="http://www.ds.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Directorate of Sports</a>
+                &nbsp; &nbsp; <a href="http://www.nsc.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">National Sports Council</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.moi.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg"><img src="~/assets/img/bd-small.png" style="width: 20px;" /> Ministry of Information and Broadcasting</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://bcti.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Film and Television Institute</a>
+                &nbsp; &nbsp; <a href="http://www.presscouncil.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Press Council</a>
+                &nbsp; &nbsp; <a href="http://www.pib.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Press Institute of Bangladesh (PIB)</a>
+                &nbsp; &nbsp; <a href="http://www.nimc.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">National Institute of Mass Communication</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://www.pressinform.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Press Information Department (PID)</a>
+                &nbsp; &nbsp; <a href="http://www.masscommunication.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Directorate of Mass Communication</a>
+                &nbsp; &nbsp; <a href="http://www.fdc.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Film Development Corporation (BFDC)</a>
+                &nbsp; &nbsp; <a href="http://www.bfa.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Film archive</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://www.bssnews.net/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Sangbad Sangshta</a>
+                &nbsp; &nbsp; <a href="http://www.btv.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Television</a>
+                &nbsp; &nbsp; <a href="http://www.bfcb.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Film Sensor Board</a>
+                &nbsp; &nbsp; <a href="http://www.betar.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Betar</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://www.dfp.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Department of Films & Publications</a>
+                &nbsp; &nbsp; <a href="http://www.infocom.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Information Commission</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                &nbsp; &nbsp; <a href="http://www.mof.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg"><img src="~/assets/img/bd-small.png" style="width: 20px;" /> Ministry of Finance (MoF)</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://www.ird.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Internal Resources Division (IRD)</a>
+                &nbsp; &nbsp; <a href="http://www.erd.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Economic Relations Division (ERD)</a>
+                &nbsp; &nbsp; <a href="http://www.mof.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Finance Division</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" />
+                <a href="http://www.fid.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Financial Institutions Division</a>
+                &nbsp; &nbsp; <a href="http://www.customs.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">Bangladesh Customs</a>
+                &nbsp; &nbsp; <a href="http://www.nbr.gov.bd/" target="_blank" class="btn btn-outline-primary btn-lg">National Board of Revenue (NBR)</a>
+                <br id="breakPoint" style="display: block;" /><br id="breakPoint" style="display: block;" /> *@
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+<!-- /.content -->
+
+<a id="back-to-top" href="#" class="btn btn-primary back-to-top" role="button" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+</a>
+</div>
+<!-- /.content-wrapper -->
+@section css
+{
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        #myInput {
+            background-image: url('/assets/img/searchicon.png');
+            background-position: 10px 10px;
+            background-repeat: no-repeat;
+            width: 100%;
+            font-size: 26px;
+            padding: 12px 20px 12px 40px;
+            border: 1px solid #ddd;
+            margin-bottom: 12px;
+            border-color: gray;
+        }
+
+        .btn-group-lg > .btn, .btn-lg {
+            padding: 1.5rem 3rem;
+            font-size: 2.5rem;
+            line-height: 2.5;
+            border-radius: 1.5rem 15px;
+            margin-top: 15px;
+        }
+    </style>
+}
+
+@section scripts
+{
+    <script>
+
+        function myFunction() {
+            debugger;
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("myInput");
+            if (input.value != null && input.value != "" && input.value != '') {
+                $(".breakPoint").css("display", "none");
+            }
+            else {
+                $(".breakPoint").css("display", "block");
+            }
+            filter = input.value.toUpperCase();
+            table = document.getElementById("divCol");
+            tr = table.getElementsByTagName("a");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+}

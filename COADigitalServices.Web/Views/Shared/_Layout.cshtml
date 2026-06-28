@@ -5,48 +5,105 @@
 <html>
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Digital MoFL</title>
+    @*@Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")*@
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Digital Services of COA</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="~/assets/plugins/fontawesome-free/css/all.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/assets/dist/css/adminlte.min.css">
+
+    <link href="~/assets/fade-in-scroll-load/css/reset.css" rel="stylesheet" />
+    <link href="~/assets/fade-in-scroll-load/css/common.css" rel="stylesheet" />
+    <style>
+            footer {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                z-index: 999; /* Ensures it stays stacked cleanly on top of PDF elements */
+            }
+
+            /* Add padding to your main container so the last lines of content aren't hidden behind the fixed bar */
+            body {
+                padding-bottom: 60px;
+            }
+    </style>
+
+    @RenderSection("css", required: false)
+</head>
+
+@* <head>
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>@title - My Site</title>
     <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/css/site.css" />
-</head>
+</head> *@
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/">My Site</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="mainNavbar">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/Home/Privacy">Privacy</a></li>
-                    @if (User?.Identity?.IsAuthenticated == true)
-                    {
-                        <li class="nav-item"><a class="nav-link" href="/Account/Logout">Logout</a></li>
-                    }
-                    else
-                    {
-                        <li class="nav-item"><a class="nav-link" href="/Account/Login">Login</a></li>
-                    }
-                    @if (User?.IsInRole("Admin") == true)
-                    {
-                        <li class="nav-item"><a class="nav-link" href="/Admin/Dashboard">Admin</a></li>
-                    }
-                </ul>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <img src="~/assets/img/bd-small.png" style="margin-right: 10px; width: 40px;" />
+                <a class="navbar-brand" href="/">COA Implemented Digital Services</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNavbar">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        @* <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/Home/Privacy">Privacy</a></li> *@
+                        
+                        @if (User?.IsInRole("Admin") == true)
+                        {
+                            <li class="nav-item"><a class="nav-link" href="/Admin/Dashboard">Admin</a></li>
+                        }
+                        @if (User?.Identity?.IsAuthenticated == true)
+                        {
+                            <li class="nav-item"><a class="nav-link" href="/Account/Logout">Logout</a></li>
+                        }
+                        else
+                        {
+                            <li class="nav-item"><a class="nav-link" href="/Account/Login">Login</a></li>
+                        }
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
-
+        </nav>
+    </div>
     <div class="container mt-4">
         @RenderBody()
     </div>
 
-    <footer class="border-top footer text-muted mt-4">
-        <div class="container">
-            &copy; @DateTime.Now.Year - My Site
+    <footer>
+        <div class="container footer-bottom border-top footer text-muted mt-4 align-content-center">
+            <div class="grid-row clear-fix" style="text-align: center !important;">
+                <div class="copyright">Implemented Digital Services - <span></span> @DateTime.Now.Year . All Rights Reserved</div>
+                <nav class="footer-nav">
+                    <ul class="clear-fix" style="text-align: center !important;">
+                        <li>
+                            <a href="https://coa-revenue.gov.bd/" target="_blank">Controller of Accounts (Revenue)</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </footer>
+
+    @* <footer class="border-top footer text-muted mt-4">
+        <div class="container">
+            <p>&copy; DateTime.Now.Year - Implemented Digital Services</p>
+        </div>
+    </footer> *@
 
     <script src="/lib/jquery/dist/jquery.min.js"></script>
     <script src="/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

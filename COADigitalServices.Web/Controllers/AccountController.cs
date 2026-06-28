@@ -43,7 +43,7 @@ namespace COADigitalServices.Controllers
                 return View(model);
             }
 
-            var user = await _db.Users.SingleOrDefaultAsync(u => u.Username == model.Username);
+            var user = await _db.Users.Include(u => u.Role).SingleOrDefaultAsync(u => u.Username == model.Username);
             if (user == null || user.PasswordHash != ComputeSha256Hash(model.Password))
             {
                 ModelState.AddModelError(string.Empty, "Invalid username or password");
@@ -54,7 +54,7 @@ namespace COADigitalServices.Controllers
             {
                 new Claim(ClaimTypes.Name, user.Username ?? string.Empty),
                 new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-                new Claim(ClaimTypes.Role, user.Role ?? string.Empty)
+                new Claim(ClaimTypes.Role, user.Role?.Name ?? string.Empty)
             };
 
             var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
@@ -65,8 +65,8 @@ namespace COADigitalServices.Controllers
             if (!string.IsNullOrEmpty(returnUrl) && Url.IsLocalUrl(returnUrl))
                 return Redirect(returnUrl);
 
-            if (!string.IsNullOrEmpty(user.Role) &&
-                user.Role.Equals("Admin", StringComparison.OrdinalIgnoreCase))
+            if (user.Role != null &&
+                user.Role.Name.Equals("Admin", StringComparison.OrdinalIgnoreCase))
             {
                 // Redirect to Admin area Dashboard
                 return RedirectToAction("Index", "Dashboard", new { area = "Admin" });
